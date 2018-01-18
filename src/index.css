@@ -1,0 +1,768 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:800');
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+/*=============================================
+Body Document Styles
+=============================================*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/*=============================================
+Grid General
+=============================================*/
+
+
+.grid {
+  display: grid;
+  margin: 0 auto;
+  
+  background: #cde;
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  grid-template-rows: minmax(200px, 1fr)  180px 200px 500px ;
+  grid-auto-rows: 200px;
+  grid-template-areas: 
+      "main main main main main"
+      "filler filler filler filler filler"
+      "Skills Skills Skills Skills Skills"
+      "SkillContent SkillContent SkillContent SkillContent SkillContent"
+      ;
+}
+
+.grid * {
+  color: white;
+  font-size: 25px;
+}
+
+/*=============================================
+Navigation Menu
+=============================================*/
+
+
+header {
+  background: #000;
+  height: 50px;
+}
+
+nav {
+  background: rgba(255, 255, 255, .1);
+  height: 70px;
+}
+
+nav > ul {
+  display: none;
+}
+
+nav > ul > li {
+  list-style: none;
+  display: inline;
+  padding: 0px 20px;
+}
+
+
+#logo {
+  float: left;
+  margin-top: -35px;
+  width: 250px;
+}
+
+/*=============================================
+Main landing page section
+=============================================*/
+
+main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  background-image:url("./background-01.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  grid-area: main;
+  align-content: center;
+}
+
+.mainHeader {
+  font-family: 'Work Sans', sans-serif;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  font-size: 60px;
+}
+
+.mainHeader > span {
+  font-size: 60px; 
+  color: black;
+}
+
+#subHead {
+  margin-top: 0px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  display: none;
+}
+
+#toolsgroup {
+  max-width: 560px;
+  margin: 60px auto auto auto;
+  display: hidden;
+}
+
+#nextContent {
+  margin-bottom: 20px;
+}
+
+#nextContent * {
+  padding: 0px;
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.downArrow {
+  width: 50px;
+}
+
+#topFiller {
+  width: 100%;
+  grid-area: filler;
+  background: #692B2B;
+}
+
+
+/*=============================================
+Skills Section
+=============================================*/
+
+.skills {
+  background-color: rgb(255, 225, 0);
+  text-align: center;
+  position: relative;
+  grid-area: Skills;
+}
+
+.skills::after {
+  content: "";
+  height: 110px;
+  width: 110px;
+  margin-top: -177px;
+  background-image:url('./tri-01.png');
+  background-size: 100%;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 80%;
+}
+
+.skills > img {
+  width: 180px;
+  margin-top: -83px;
+  margin-left: 35px;
+}
+
+.skills > h1 {
+  margin-top: 0px;
+  font-family:'Work Sans', sans-serif;
+  color: #008DAA;
+  font-size: 45px;
+}
+
+#skillContent {
+  grid-area: SkillContent;
+  display: grid;
+  grid-template-areas: 
+    "oneContent oneContent oneContent";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 500px;
+  grid-auto-rows: 300px;
+  background: #008CAD;
+  grid-gap: 15px;
+}
+
+.oneContent {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.oneContent > h1 {
+  font-family:'Work Sans', sans-serif;
+  max-width: 200px;
+  margin: 10px auto 20px auto;
+}
+
+.oneContent > p {
+  font-size: 20px;
+  max-width: 300px;
+  margin: 0px auto 20px auto;
+}
+
+.oneContent > img {
+  width: 250px;
+  margin: 70px auto 10px auto;
+}
+
+/*=============================================
+Media Queries
+=============================================*/
+
+@media (min-width: 768px )  {
+  nav > ul {
+    display: flex;
+    flex-direction: row;
+    float: right;
+  }
+
+  #toolsgroup {
+    max-width: 700px;
+    display: inline;
+    margin-top: 20px;
+  }
+
+  #subHead {
+    display: inline;
+  }
+}
+
+/*=============================================
+Big Divider One
+=============================================*/
+
+.bigDivider-one {
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 300px 200px;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  background:rgb(83, 13, 13);
+  color: white;
+  justify-content: center;
+  
+}
+
+.divider {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background: #692B2B;
+}
+
+.left-side {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-side {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-side > div > h2 {
+  margin: 0px 0px -15px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.right-side > div > h1 {
+  margin: -5px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-family:'Work Sans', sans-serif;
+  font-size: 50px;
+  color: #008CAD;
+}
+
+.point {
+  margin: 0px;
+  padding: 0px;
+  font-size: 22px;
+}
+
+.bigDivider-one::after {
+  content: "";
+  height: 70px;
+  width: 70px;
+  margin-bottom: -53px;
+  background-size: 100%;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 80%;
+} 
+
+#big-divider-blue::after {
+  background-image:url('./triblue.png');
+}
+
+#big-divider-purple::after {
+  background-image:url('./purptri.png');
+}
+
+#big-divider-green::after {
+  background-image:url('./greentri.png');
+}
+
+
+/*=============================================
+Our Work
+=============================================*/
+
+
+.work {
+  height:200px;
+  max-width: 100%;
+  color: #1EBC67;
+  background: #4F00AC;
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+
+.work > img {
+  width: 450px;
+  margin: -110px auto -90px auto;
+}
+
+.work > h1  {
+  margin-top: 10px;
+  font-family:'Work Sans', sans-serif;
+  font-size: 45px;
+  margin-top: 100px;
+}
+
+.work::after {
+  content: "";
+  height: 70px;
+  width: 70px;
+  margin-top:-205px;
+  background-image:url('./tri-01.png');
+  background-size: 100%;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 80%;
+}
+
+.workContent {
+  display: flex;
+  margin: 0px auto;
+  padding: 0px;
+  background: #A63EFF;
+  flex: 1 100%;
+
+}
+
+#client-box {
+  margin: 0px auto;
+  width: 80%;
+}
+
+.clients {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 400px 400px;
+}
+
+.client {
+  background: rgb(132, 41, 211);
+}
+
+.client:first-child {
+  background: rgb(111, 26, 185);
+}
+.client:last-child {
+  background: rgb(94, 33, 148);
+}
+
+
+/*=============================================
+Our Work
+=============================================*/
+.team {
+  height:200px;
+  max-width: 100%;
+  background: #27F06C;
+  color: #00653A;
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+
+.team > img {
+    width: 250px;
+    margin: -120px auto -90px auto;
+    padding-left: 20px;
+}
+
+.team > h1  {
+  margin-top: 100px;
+  font-family:'Work Sans', sans-serif;
+  font-size: 45px;
+}
+
+.teamContent {
+  display: grid;
+  grid-template-columns: 2fr repeat(8, 1fr) 2fr;
+  grid-template-rows: 300px 150px 180px 180px 180px 180px;
+  margin: 0px auto;
+  padding: 0px;
+  background: #00AA62;
+  color: #27F06C;
+  
+}
+
+#design-lead {
+  display: flex;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  flex-direction: column;
+  margin: 30px auto 0px auto;
+  text-align: center;
+}
+
+#design-lead > img {
+  width: 280px;
+}
+
+#design-lead > h1 {
+  color: white;
+  font-family:'Work Sans', sans-serif;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 40px;
+}
+
+#design-lead > p {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+#team-intro {
+  grid-column-start: 4;
+  grid-column-end: 8;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto 0px auto;
+  text-align: center;
+  
+}
+
+#team-intro > h1{ 
+  font-size: 90px;
+  color: #00653A;
+  font-family:'Work Sans', sans-serif;
+  padding: 0px;
+  border-bottom: 3px solid #27F06C;
+}
+
+#team-intro > p {
+  color: white;
+  margin: -20px auto 0px auto;
+  font-size: 17px;
+  max-width: 500px;
+}
+
+#dev-lead {
+  grid-column-start: 8;
+  grid-column-end: 10;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  text-align: center;
+}
+
+#dev-lead > img {
+  width: 280px;
+}
+
+#dev-lead > h1 {
+  color: white;
+  font-family:'Work Sans', sans-serif;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 40px;
+}
+
+#dev-lead > p {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+
+#team-header {
+  margin-top: 40px;
+  font-family:'Work Sans', sans-serif;
+  font-size: 60px;
+  border-bottom: 3px solid #27F06C;
+}
+
+.underling {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto 0px auto;
+  text-align: center;
+}
+
+.underling > img {
+  width: 200px;
+}
+
+.underling > h1 {
+  color: white;
+  font-family:'Work Sans', sans-serif;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 35px;
+}
+
+.underling > p {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 10px 0px;
+  border-bottom: 2px solid #27F06C;
+}
+
+#MINAH {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+#STEVE {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+#TINA {
+  grid-column-start: 6;
+  grid-column-end: 8;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+#BILL {
+  grid-column-start: 8;
+  grid-column-end: 10;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+
+#JOSEPH {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 5;
+  grid-row-end: 7;
+}
+
+#EDWARD {
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 5;
+  grid-row-end: 7;
+}
+
+#JUDY {
+  grid-column-start: 6;
+  grid-column-end: 8;
+  grid-row-start: 5;
+  grid-row-end: 7;
+}
+
+#BARACK {
+  grid-column-start: 8;
+  grid-column-end: 10;
+  grid-row-start: 5;
+  grid-row-end: 7;
+}
+
+/*=============================================
+Contact Us
+=============================================*/
+
+.contact {
+  height: 200px;
+  background-color: #008DAA;
+  text-align: center;
+  position: relative;
+  grid-area: Skills;
+}
+
+.contact::after {
+  content: "";
+  height: 110px;
+  width: 110px;
+  margin-top: -177px;
+  background-image:url('./tri-01.png');
+  background-size: 100%;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 80%;
+}
+
+.contact > img {
+  width: 180px;
+  margin-top: -83px;
+  margin-left: 35px;
+}
+
+.contact > h1 {
+  margin-top: 0px;
+  font-family:'Work Sans', sans-serif;
+  color:rgb(255, 225, 0);
+  font-size: 45px;
+}
+
+/*=============================================
+Contact Content
+=============================================*/
+
+.contactContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  background:rgb(255, 225, 0);
+  padding: 30px 0px 0px 0px;
+}
+
+#emailHeader {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Work Sans", sans-serif;
+  color: #008DAA;
+  font-size: 40px;
+}
+
+#emailSubHeader {
+  margin: 0px 0px 30px 0px;
+  padding: 0px;
+  color: #008DAA;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+}
+
+#contactForm {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+  "Email Email Email Email"
+  "First First Last Last" 
+  "Company Company City State"
+  "Message Message Message Message"
+  "Message Message Message Message"
+  "Submit Submit Submit Submit"
+  ;
+  grid-gap: 20px;
+  width: 900px;
+  margin-bottom: 30px;
+}
+
+#contactForm > * {
+  border: none;
+  border-radius: 10px;
+  padding: 15px 0px 15px 10px;
+  font-size: 30px;
+  color: #008DAA;
+}
+
+*::placeholder {
+  color: #008DAA;
+  font-family: "Raleway", sans-serif;
+}
+
+#contactForm > *:focus {
+  outline: none;
+}
+
+#contactForm:not(#submit) {
+  color: white;
+}
+
+#email {
+  grid-area: Email;
+}
+
+#fName {
+  grid-area: First;
+}
+
+#lName {
+  grid-area: Last;
+}
+
+#company {
+  grid-area: Company;
+
+}
+
+#city {
+  grid-area: City;
+
+}
+
+#state {
+  grid-area: State;
+
+}
+
+#state {
+  grid-area: Message;
+
+}
+
+#submit {
+  grid-area: Submit;
+  width: 200px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background: #008DAA;
+  color: white;
+}
+
+
+
+/*=============================================
+Footer
+=============================================*/
+
+footer {
+  background: #6A879A;
+  grid-area: footer;
+}
+
+
